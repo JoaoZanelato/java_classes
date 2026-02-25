@@ -11,11 +11,7 @@ public class SmartTv {
         this.channel = channel;
         this.on = on;
     }
-
-    public SmartTv() {
-
-    }
-
+    
     public int getChannel() {
         return channel;
     }
