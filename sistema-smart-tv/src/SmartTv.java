@@ -6,6 +6,16 @@ public class SmartTv {
     private int volume = 5;
     private int channel = 0;
 
+    public SmartTv(int volume, int channel, boolean on) {
+        this.volume = volume;
+        this.channel = channel;
+        this.on = on;
+    }
+
+    public SmartTv() {
+
+    }
+
     public int getChannel() {
         return channel;
     }

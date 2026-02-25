@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        SmartTv tv = new SmartTv();
+        SmartTv tv = new SmartTv(5, 22, true);
 
         System.out.println("--- Testando com a TV Desligada ---");
         try {
             // Isso vai falhar e cair no catch, pois a TV começa desligada (on = false)
             tv.setChannel(5);
         } catch (IllegalStateException e) {
-            System.out.println("Erro esperado capturado: " + e.getMessage());
+            System.out.println("Erro esperado capturado:    " + e.getMessage());
         }
 
         System.out.println("\n--- Ligando a TV ---");
