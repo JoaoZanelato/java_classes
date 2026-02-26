@@ -1,4 +1,4 @@
-public class SmartTv {
+public class SmartTv implements ISmartTv {
     private final int MAX_VOLUME = 10;
     private final int MIN_VOLUME = 0;
 
@@ -52,8 +52,7 @@ public class SmartTv {
         this.on = on;
     }
 
-    // Sei que a implementação fere o princípio DRY, porém como é algo pequeno, não quis usar JDP (JAVA DYNAMIC PROXY)
-    private boolean isOn(){
+    public boolean isOn(){
         if (on) {
             System.out.println("ON");
             return true;

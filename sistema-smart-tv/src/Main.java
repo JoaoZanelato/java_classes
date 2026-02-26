@@ -1,6 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        SmartTv tv = new SmartTv(5, 22, true);
+        //Instância da classe através da sua interface
+        ISmartTv tvReal = new SmartTv(5, 22, false);
+
+        ISmartTv tv = (ISmartTv) java.lang.reflect.Proxy.newProxyInstance(
+                ISmartTv.class.getClassLoader(), // Carrega a classe
+                new Class<?>[]{ ISmartTv.class }, // Passa a nova instância
+                new SmartTvHandler(tvReal) //Manda a instância real pro handler
+        );
 
         System.out.println("--- Testando com a TV Desligada ---");
         try {
