@@ -101,3 +101,14 @@ A foundational project demonstrating the basic structure of a linked node used i
 **Core Concepts Applied:**
 - **Generics:** Utilizing `<T>` to create a type-safe, reusable node structure (`Node<T>`).
 - **Self-referencing Objects:** Implementing a `next_node` pointer to link instances in memory, building the base logic for a Linked List.
+
+---
+
+#### Pile (Stack)
+A custom implementation of a Stack (LIFO - Last In, First Out) data structure from scratch, utilizing linked nodes.
+
+**Core Concepts Applied:**
+- **Data Structures (LIFO):** Implementing core stack operations: `push` (add to top), `pop` (remove from top), and `top` (view top element).
+- **Object Referencing:** Managing pointers (`ref`) between `Node` objects to dynamically update the stack's top position without losing data.
+- **State Verification:** Safe operations using an `isEmpty()` validation to avoid null pointer exceptions during `pop` calls.
+- **String Manipulation & Loops:** Overriding the `toString()` method with a `while` loop to traverse the linked nodes and visually format the entire stack in the console.
