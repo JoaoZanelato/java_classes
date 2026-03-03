@@ -5,6 +5,40 @@ This repository contains mini-projects developed to practice and solidify my Jav
 
 ---
 
+## Study Roadmap
+
+### 1. Java Language Fundamentals
+- [x] **Object-Oriented Programming (OOP):** Classes, Interfaces, Inheritance, Polymorphism, and Encapsulation.
+- [ ] **Collections Framework:** Mastery of List, Set, Map and their main implementations (ArrayList, HashSet, HashMap).
+- [x] **Exception Handling:** Exception hierarchy, try-catch blocks, and custom exceptions.
+- [ ] **Streams API & Lambdas:** Functional manipulation and operation chaining in collections.
+
+### 2. Software Engineering & Quality
+- [x] **Clean Code:** Clear naming, cohesive functions, and proper error handling.
+- [ ] **SOLID Principles:** Practical application of the five principles for scalable software.
+- [ ] **Design Patterns:** Creational (Singleton, Builder, Factory Method) and Behavioral (Strategy) patterns.
+
+### 3. Database & Persistence
+- [x] **Relational Databases (SQL):** Data modeling, normalization, complex queries (JOINs, GROUP BY), and transactions (ACID).
+- [ ] **JPA & Hibernate:** Object-Relational Mapping (ORM), relationships (OneToMany, ManyToOne), and entity lifecycle.
+
+### 4. Framework (Spring Boot)
+- [ ] **IoC & DI:** Inversion of Control and Dependency Injection.
+- [ ] **Spring Web:** Building RESTful APIs, HTTP verbs, and MVC pattern (Controllers, Services, Repositories).
+- [ ] **Spring Data JPA:** Dynamic repositories and derived queries.
+- [ ] **Spring Security:** Filters, authentication, and authorization (JWT token implementation).
+
+### 5. Automated Testing
+- [ ] **Unit Testing:** Isolated business rule validation using **JUnit**.
+- [ ] **Mocking:** Simulating dependencies and behaviors using **Mockito**.
+
+### 6. Tools & Infrastructure
+- [ ] **Build Management:** Mastery of Maven or Gradle.
+- [x] **Git & GitHub:** Version control, semantic commits, branches, and Pull Request workflows.
+- [ ] **Basic Docker:** Application packaging (`Dockerfile`) and local database setup (`docker-compose`).
+
+---
+
 #### sistema-smart-tv
 My first touch with Java after the 2nd semester. This project simulates a Smart TV and focuses on building a solid foundation in OOP and code maintainability.
 
@@ -47,3 +81,23 @@ An Object-Oriented modeling challenge based on the first iPhone's presentation. 
 - **Multiple Implementation:** Demonstrating how a single concrete class (`Iphone`) can implement multiple interfaces simultaneously to aggregate behaviors.
 - **Polymorphism:** Showcasing how the same `Iphone` object in memory can be referenced dynamically by its different modular interfaces.
 - **UML Modeling:** Translating a visual class diagram into clean, decoupled Java code following best practices.
+
+---
+
+#### BancoDigitalOO
+A digital bank modeling simulation focusing on Object-Oriented principles and transaction history.
+
+**Core Concepts Applied:**
+- **Inheritance & Abstraction:** Abstract `Conta` class extended by concrete `ContaCorrente` and `ContaPoupanca` classes.
+- **Interfaces:** `IConta` defining the standard contract for banking operations like deposits, withdrawals, and transfers.
+- **Encapsulation & Composition:** `Banco` managing a list of accounts (`Conta`), and each account being associated with a `Cliente`.
+- **Collections & Date Handling:** Using `List` to store transaction history and `LocalDateTime` for formatting operation timestamps.
+
+---
+
+#### Node
+A foundational project demonstrating the basic structure of a linked node used in custom data structures.
+
+**Core Concepts Applied:**
+- **Generics:** Utilizing `<T>` to create a type-safe, reusable node structure (`Node<T>`).
+- **Self-referencing Objects:** Implementing a `next_node` pointer to link instances in memory, building the base logic for a Linked List.
