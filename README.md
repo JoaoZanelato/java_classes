@@ -112,3 +112,14 @@ A custom implementation of a Stack (LIFO - Last In, First Out) data structure fr
 - **Object Referencing:** Managing pointers (`ref`) between `Node` objects to dynamically update the stack's top position without losing data.
 - **State Verification:** Safe operations using an `isEmpty()` validation to avoid null pointer exceptions during `pop` calls.
 - **String Manipulation & Loops:** Overriding the `toString()` method with a `while` loop to traverse the linked nodes and visually format the entire stack in the console.
+
+---
+
+#### Queue
+A custom implementation of a Queue (FIFO - First In, First Out) data structure from scratch, utilizing linked nodes.
+
+**Core Concepts Applied:**
+- **Data Structures (FIFO):** Implementing core queue operations: `enqueue` (add to the back), `dequeue` (remove from the front), and `first` (view the front element).
+- **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable queue and node structure (`Queue<T>`, `Node<T>`).
+- **Object Referencing & Traversal:** Managing pointers (`ref`) and utilizing `while` loops to traverse the linked nodes from the entry point to the front of the queue to perform dynamic data retrieval and removal.
+- **State Verification:** Ensuring safe operations with an `isEmpty()` validation to avoid null pointer exceptions during data extraction.
