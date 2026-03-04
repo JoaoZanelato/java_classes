@@ -123,3 +123,15 @@ A custom implementation of a Queue (FIFO - First In, First Out) data structure f
 - **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable queue and node structure (`Queue<T>`, `Node<T>`).
 - **Object Referencing & Traversal:** Managing pointers (`ref`) and utilizing `while` loops to traverse the linked nodes from the entry point to the front of the queue to perform dynamic data retrieval and removal.
 - **State Verification:** Ensuring safe operations with an `isEmpty()` validation to avoid null pointer exceptions during data extraction.
+
+---
+
+#### LinkedList
+A custom implementation of a Singly Linked List data structure from scratch, building upon the basic `Node` logic.
+
+**Core Concepts Applied:**
+- **Data Structures (Singly Linked List):** Implementing core list operations: `add` (append to the end), `remove` (by index), `get` (by index), and `size`.
+- **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable list and node structure (`LinkedList<T>`, `Node<T>`).
+- **Object Referencing & Traversal:** Managing pointers (`refEntry` / `nextNode`) and utilizing `while` and `for` loops to traverse the nodes for dynamic data retrieval, addition, and removal without relying on fixed arrays.
+- **Exception Handling:** Implementing boundary checks (`isIndexValid`) that throw a custom `IndexOutOfBoundsException` to ensure safe data access and prevent invalid index lookups.
+- **Recursion:** Utilizing recursive calls within the `Node` class (`toStringLinked`) to navigate and format the structure.
