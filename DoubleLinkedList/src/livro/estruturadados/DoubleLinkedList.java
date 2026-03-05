@@ -2,7 +2,7 @@ package livro.estruturadados;
 
 public class DoubleLinkedList<T> {
     private DoubleRefNode<T> head, tail;
-    private int size = -1; //Para trabalhar na lógica de índices
+    private int size = 0;
 
     public DoubleLinkedList() {
         head = tail = null;
@@ -18,21 +18,12 @@ public class DoubleLinkedList<T> {
         newNode.setNextNode(null);
 
         if(isEmpty()){
-
-            newNode.setPreviousNode(null);
-
-            // Ele é o primeiro e o último ao mesmo tempo.
             head = newNode;
             tail = newNode;
         }
         else{
-            // 1. O novo nó olha para trás e "dá a mão" para o atual último nó (tail)
             newNode.setPreviousNode(tail);
-
-            // 2. O atual último nó olha para frente e "dá a mão" para o novo nó
             tail.setNextNode(newNode);
-
-            // 3. A lista atualiza sua referência de fim: o "tail" passa a ser o novo nó
             tail = newNode;
         }
         size++;
@@ -42,6 +33,7 @@ public class DoubleLinkedList<T> {
         DoubleRefNode<T> newNode = new DoubleRefNode<>(content);
         newNode.setPreviousNode(null);
         newNode.setNextNode(null);
+
         if(isEmpty()){
             head = newNode;
             tail = newNode;
@@ -54,17 +46,20 @@ public class DoubleLinkedList<T> {
     }
 
     private boolean isIndexValid(int index){
-        return index < 0 || index >= size;
+        return index >= 0 && index < size;
     }
+
     private DoubleRefNode<T> getNode(int index){
-        if(isIndexValid(index)){
-            DoubleRefNode<T> current = head;
-            for(int i = 0; i < index; i++){
-                current = current.getNextNode();
-            }
-            return current;
+        if(!isIndexValid(index)){
+
+            throw new IndexOutOfBoundsException("Índice inexistente: " + index);
         }
-        return null;
+
+        DoubleRefNode<T> current = head;
+        for(int i = 0; i < index; i++){
+            current = current.getNextNode();
+        }
+        return current;
     }
 
     public DoubleRefNode<T> get(int index){
@@ -72,29 +67,78 @@ public class DoubleLinkedList<T> {
     }
 
     public String remove(int index){
-        try {
-            DoubleRefNode<T> toRemove = getNode(index);
-            DoubleRefNode<T> previous = toRemove.getPreviousNode();
-            DoubleRefNode<T> next = toRemove.getNextNode();
-            if(previous == null && next == null){
-                head = tail = null;
-            }
-            else if(previous == null){
-                head = next;
-            }
-            else if(next == null){
-                tail = previous;
-            }
-            else{
-                previous.setNextNode(next);
-                next.setPreviousNode(previous);
-            }
+        DoubleRefNode<T> toRemove = getNode(index);
+        DoubleRefNode<T> previous = toRemove.getPreviousNode();
+        DoubleRefNode<T> next = toRemove.getNextNode();
 
-            return toRemove.toString();
-        }catch(IndexOutOfBoundsException e){
-            return "INVALID INDEX = " + index + "\n" + e;
+        if(previous == null && next == null){
+            head = tail = null;
         }
+        else if(previous == null){
+            head = next;
+            head.setPreviousNode(null);
+        }
+        else if(next == null){
+            tail = previous;
+            tail.setNextNode(null);
+        }
+        else{
+            previous.setNextNode(next);
+            next.setPreviousNode(previous);
+        }
+        size--;
 
+        return toRemove.toString();
     }
 
+
+    public String addAtIndex(T content, int index){
+
+        if(index == 0){
+            insertAtHead(content);
+            return "ADDED AT INDEX 0";
+        }
+
+        if(index == size){
+            insertAtTail(content);
+            return "ADDED AT INDEX " + index;
+        }
+
+        DoubleRefNode<T> currentAtIndex = getNode(index);
+        DoubleRefNode<T> previous = currentAtIndex.getPreviousNode();
+
+        DoubleRefNode<T> newNode = new DoubleRefNode<>(content);
+
+        newNode.setPreviousNode(previous);
+        newNode.setNextNode(currentAtIndex);
+
+        previous.setNextNode(newNode);
+        currentAtIndex.setPreviousNode(newNode);
+
+        size++;
+
+        return "ADDED AT = " + index;
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "[] (Lista Vazia)";
+        }
+
+        StringBuilder builder = new StringBuilder();
+        DoubleRefNode<T> current = head;
+
+        builder.append("[ ");
+        while (current != null) {
+            builder.append(current.toString());
+            if (current.getNextNode() != null) {
+                builder.append(" <-> ");
+            }
+            current = current.getNextNode();
+        }
+        builder.append(" ]");
+
+        return builder.toString();
+    }
 }
