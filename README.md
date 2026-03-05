@@ -142,7 +142,8 @@ A custom implementation of a Singly Linked List data structure from scratch, bui
 A custom implementation of a Doubly Linked List data structure from scratch. *Built referencing the logic and steps from the book "Lógica de Programação e Estruturas de Dados" by Sônia Puga (3rd Edition).*
 
 **Core Concepts Applied:**
-- **Data Structures (Doubly Linked List):** Implementing advanced bidirectional list operations: `insertAtTail`, `insertAtHead`, `get` (by index), and `remove` (by index) managing complex reference re-routing.
+- **Data Structures (Doubly Linked List):** Implementing advanced bidirectional list operations: `insertAtTail`, `insertAtHead`, `addAtIndex`, `get` (by index), and `remove` (by index).
 - **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable list and node structure (`DoubleLinkedList<T>`, `DoubleRefNode<T>`).
-- **Double Object Referencing:** Managing dual pointers (`previousNode` and `nextNode`) within each node, allowing forward and backward traversal and complex node deletion in the middle of the chain.
-- **Exception Handling:** Utilizing `try-catch` blocks alongside an `IndexOutOfBoundsException` to gracefully handle invalid index operations during element removal.
+- **Double Object Referencing:** Managing dual pointers (`previousNode` and `nextNode`) within each node, allowing forward and backward traversal and complex node insertion/deletion in the middle of the chain.
+- **Exception Handling & Validation:** Utilizing `IndexOutOfBoundsException` to gracefully handle invalid index operations, ensuring the `size` property correctly tracks the element count.
+- **Data Visualization & Testing:** Overriding the `toString()` method with a `StringBuilder` to visually map the bidirectional connections (`<->`) in the console, supported by a comprehensive `Main` testing suite.
