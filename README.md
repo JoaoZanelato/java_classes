@@ -135,3 +135,14 @@ A custom implementation of a Singly Linked List data structure from scratch, bui
 - **Object Referencing & Traversal:** Managing pointers (`refEntry` / `nextNode`) and utilizing `while` and `for` loops to traverse the nodes for dynamic data retrieval, addition, and removal without relying on fixed arrays.
 - **Exception Handling:** Implementing boundary checks (`isIndexValid`) that throw a custom `IndexOutOfBoundsException` to ensure safe data access and prevent invalid index lookups.
 - **Recursion:** Utilizing recursive calls within the `Node` class (`toStringLinked`) to navigate and format the structure.
+
+---
+
+#### DoubleLinkedList
+A custom implementation of a Doubly Linked List data structure from scratch. *Built referencing the logic and steps from the book "Lógica de Programação e Estruturas de Dados" by Sônia Puga (3rd Edition).*
+
+**Core Concepts Applied:**
+- **Data Structures (Doubly Linked List):** Implementing advanced bidirectional list operations: `insertAtTail`, `insertAtHead`, `get` (by index), and `remove` (by index) managing complex reference re-routing.
+- **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable list and node structure (`DoubleLinkedList<T>`, `DoubleRefNode<T>`).
+- **Double Object Referencing:** Managing dual pointers (`previousNode` and `nextNode`) within each node, allowing forward and backward traversal and complex node deletion in the middle of the chain.
+- **Exception Handling:** Utilizing `try-catch` blocks alongside an `IndexOutOfBoundsException` to gracefully handle invalid index operations during element removal.
