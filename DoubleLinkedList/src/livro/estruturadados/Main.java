@@ -2,7 +2,7 @@ package livro.estruturadados;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         DoubleLinkedList<String> estacoes = new DoubleLinkedList<>();
 
         System.out.println("1. Estado inicial:");
