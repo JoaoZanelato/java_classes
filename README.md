@@ -147,3 +147,15 @@ A custom implementation of a Doubly Linked List data structure from scratch. *Bu
 - **Double Object Referencing:** Managing dual pointers (`previousNode` and `nextNode`) within each node, allowing forward and backward traversal and complex node insertion/deletion in the middle of the chain.
 - **Exception Handling & Validation:** Utilizing `IndexOutOfBoundsException` to gracefully handle invalid index operations, ensuring the `size` property correctly tracks the element count.
 - **Data Visualization & Testing:** Overriding the `toString()` method with a `StringBuilder` to visually map the bidirectional connections (`<->`) in the console, supported by a comprehensive `Main` testing suite.
+
+---
+
+#### CircularList
+A custom implementation of a Circular Linked List data structure from scratch, where the tail node continuously points back to the head node, creating an infinite loop.
+
+**Core Concepts Applied:**
+- **Data Structures (Circular Linked List):** Implementing core circular list operations: `add` (append to the loop), `remove` (by index, with dynamic head/tail updates), and `get` (by index).
+- **Generics & Type Safety:** Utilizing `<T>` to create a flexible, reusable list and node structure (`CircularList<T>`, `Node<T>`).
+- **Circular Object Referencing:** Managing pointers to ensure the `tail` always references the `head` (`tail.setNextNode(head)`), maintaining the infinite loop structure even when nodes are dynamically added or removed.
+- **Exception Handling:** Utilizing `IndexOutOfBoundsException` to safely handle invalid index operations and prevent errors on empty list extractions.
+- **Data Visualization:** Overriding the `toString()` method with a `StringBuilder` to safely traverse the loop up to its size and visually map the circular connection back to the head in the console.
