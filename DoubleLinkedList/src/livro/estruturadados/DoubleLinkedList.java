@@ -13,7 +13,7 @@ public class DoubleLinkedList<T> {
     }
 
     public void insertAtTail(T content){
-        DoubleRefNode<T> newNode = new DoubleRefNode<>(content);
+        DoubleRefNode<T> newNode = new DoubleRefNode<T>(content);
         newNode.setPreviousNode(null);
         newNode.setNextNode(null);
 
