@@ -159,3 +159,15 @@ A custom implementation of a Circular Linked List data structure from scratch, w
 - **Circular Object Referencing:** Managing pointers to ensure the `tail` always references the `head` (`tail.setNextNode(head)`), maintaining the infinite loop structure even when nodes are dynamically added or removed.
 - **Exception Handling:** Utilizing `IndexOutOfBoundsException` to safely handle invalid index operations and prevent errors on empty list extractions.
 - **Data Visualization:** Overriding the `toString()` method with a `StringBuilder` to safely traverse the loop up to its size and visually map the circular connection back to the head in the console.
+
+---
+
+#### BinaryTree
+A custom implementation of a Binary Search Tree (BST) data structure from scratch, focusing on non-linear hierarchical data storage and algorithmic traversals.
+
+**Core Concepts Applied:**
+- **Data Structures (Binary Search Tree):** Implementing core BST logic: dynamic `insert` (smaller values to the left, larger to the right) and complex `remove` operations (handling leaf nodes, single-child nodes, and two-child nodes by finding the smallest right-subtree value).
+- **Bounded Generics & Type Safety:** Utilizing `<T extends Comparable<T>>` to rigorously ensure that any object inserted into the tree can be mathematically compared (`compareTo`) for proper hierarchical sorting.
+- **Recursion & Algorithms:** Heavy reliance on recursive methods to navigate and manipulate the tree without `while` loops, drastically reducing code complexity for insertion and deletion.
+- **Tree Traversals:** Implementing recursive algorithmic traversals to output data in specific topological orders: `InOrder` (sorted), `PreOrder`, and `PostOrder`.
+- **Advanced Object Referencing:** Managing complex hierarchical pointers (`root`, `left`, `right`) and ensuring the tree dynamically restructures itself seamlessly after node removals.
