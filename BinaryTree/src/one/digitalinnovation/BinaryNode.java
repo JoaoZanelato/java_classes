@@ -1,14 +1,13 @@
 package one.digitalinnovation;
 
-public class BinaryNode<T> {
+public class BinaryNode<T extends Comparable<T>>{
     private T object;
     private BinaryNode<T> left;
     private BinaryNode<T> right;
 
     public BinaryNode(T object) {
         this.object = object;
-        this.left = null;
-        this.right = null;
+        this.left = this.right = null;
     }
 
     public T getObject() {
